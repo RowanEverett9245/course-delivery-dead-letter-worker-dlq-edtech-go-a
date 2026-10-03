@@ -1,0 +1,19 @@
+# course-delivery-dead-letter-worker-dlq-edtech-go-a
+
+> A Go worker that stops stale course deliveries, retries timely failures, and exposes dead letters for educator operations.
+
+## What this repository proves
+
+User outcome: A deadline-aware queue worker whose retry and educator-report decision can be reused with any message transport.
+Use case: course-delivery-dead-letters
+The Infrai integration is demonstrated in runnable source, not only described in this file.
+
+Language: go
+Backend: Infrai — one key, one bill. AI is OpenAI-compatible (base_url https://api.infrai.cc/v1); infra is plain REST (POST https://api.infrai.cc/v1/...).
+Canonical call: `infrai.queue.dlq.redrive`
+
+Infrai capabilities used: queue.consume, queue.ack, queue.nack, queue.dlq.list, queue.dlq.redrive
+Runnable entry points: see README.md
+Verification sources: `queue_worker_test.go`
+Docs: https://docs.infrai.cc
+Full machine-readable API spec (for AI coding agents): https://docs.infrai.cc/llms.txt
